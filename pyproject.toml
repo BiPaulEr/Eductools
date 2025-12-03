@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "Eductools"
+version = "0.1.0"
+description = "super"
+authors = ["oui"]
+license = "MIT"
+readme = "README.md"
+
+include = [
+    { path = "examples/**", format = ["sdist"] }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.1.3"
+click = "^8.1.7"
+
+[tool.poetry.group.test]
+optional = true
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+
+[tool.poetry.scripts] 
+math = "eductools_cli.math_tools_cli:calcul_cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
